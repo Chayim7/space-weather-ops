@@ -22,7 +22,5 @@ def test_observation_accepts_correct_timestamp_field_name():
 
 def test_reject_negative_solar_wind_speed():
     with pytest.raises(ValidationError):
-        observation = SolarWindObservation(timestamp="2026-10-02T14:00:00Z", speed=-10.0)
-
-        assert observation.speed >= 0, "Solar wind speed cannot be negative"
+        SolarWindObservation(timestamp="2026-10-02T14:00:00Z", speed=-50.0)
 
